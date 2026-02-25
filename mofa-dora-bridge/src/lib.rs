@@ -173,9 +173,9 @@ impl MofaNodeType {
     /// Parse node type from node ID
     pub fn from_node_id(node_id: &str) -> Option<Self> {
         match node_id {
-            "mofa-audio-player" => Some(MofaNodeType::AudioPlayer),
-            "mofa-system-log" => Some(MofaNodeType::SystemLog),
-            "mofa-prompt-input" => Some(MofaNodeType::PromptInput),
+            "mofa-audio-player" | "mofa-audio-player-debate" => Some(MofaNodeType::AudioPlayer),
+            "mofa-system-log" | "mofa-system-log-debate" => Some(MofaNodeType::SystemLog),
+            "mofa-prompt-input" | "mofa-prompt-input-debate" => Some(MofaNodeType::PromptInput),
             "mofa-mic-input" => Some(MofaNodeType::MicInput),
             "mofa-chat-viewer" => Some(MofaNodeType::ChatViewer),
             "mofa-participant-panel" => Some(MofaNodeType::ParticipantPanel),

@@ -6,7 +6,7 @@
 #   - Uses dora-kokoro-tts (CPU backend) instead of PrimeSpeech
 #
 # Usage:
-#   export GROQ_API_KEY="your-key"
+#   export DEEPSEEK_API_KEY="your-key"
 #   dora up
 #   dora start voice-chat-linux.yml
 
@@ -25,7 +25,7 @@ nodes:
       - log
     env:
       MAAS_CONFIG_PATH: debate_config_pro_deepseek.toml
-      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
       LOG_LEVEL: INFO
 
   - id: student2
@@ -40,7 +40,7 @@ nodes:
       - log
     env:
       MAAS_CONFIG_PATH: debate_config_con_deepseek.toml
-      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
       LOG_LEVEL: INFO
 
   - id: tutor
@@ -55,7 +55,7 @@ nodes:
       - log
     env:
       MAAS_CONFIG_PATH: debate_config_judge_deepseek.toml
-      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
       LOG_LEVEL: INFO
 
   # ============ Multi-Participant Audio Pipeline ============

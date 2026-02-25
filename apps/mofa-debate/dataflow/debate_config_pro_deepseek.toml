@@ -1,0 +1,23 @@
+# MaaS Client Configuration - Debater PRO (Groq)
+
+default_model = "llama-3.3-70b-versatile"
+system_prompt = """
+You are Student1 (PRO side) in a formal debate. Argue in favor of the given topic, be concise, structured, and respectful. Avoid off-topic content. Keep each turn under 200 characters. Do not invent facts.
+"""
+
+max_history_exchanges = 30
+enable_streaming = true
+enable_tools = false
+enable_local_mcp = false
+log_level = "INFO"
+
+[[providers]]
+id = "groq"
+kind = "openai"
+api_key = "env:GROQ_API_KEY"
+api_url = "https://api.groq.com/openai/v1"
+proxy = false
+
+[[models]]
+id = "llama-3.3-70b-versatile"
+route = { provider = "groq", model = "llama-3.3-70b-versatile" }
